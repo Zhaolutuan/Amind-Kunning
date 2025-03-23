@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>ChatGPT Web Example</title>
+  <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/tiny-slider.css" />
+    <link rel="stylesheet" href="assets/css/glightbox.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="dalle.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML5 Template">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="chatgpt_demo_container"></div>
+    <header class="header navbar-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="nav-inner">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="index.html" style="display: inline-block; width: 64px; height: 64px">
+                            <img src="assets/images/logo/A-Mind.svg"
+                                 alt="Logo"
+                                 style="width: 100%; height: 100%; object-fit: contain; image-rendering: crisp-edges;">
+                        </a>
+                        <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                      <a class="dd-menu collapsed" href="index.html" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">主页</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="button add-list-button">
+                            <a href="404.html" class="btn">
+                                登录账号/注册</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div> 
+    </div>
+    </header>
+    <div class="word-container" id="word-container">
+        <div class="grid-container">
+          <div class="grid-item_big_title">
+            PROMPT系统
+          </div>
+          <div class="grid-item_title">
+            INPUT
+          </div>
+          <div class="grid-item_little_title">相关关键词</div>
+          <div class="grid-item_container">
+            <div class="chip-group">
+            
+              <button class="chip" id="monitor1" onClick={}>关键词</button>
+              <button class="chip" id="monitor2" onClick={}>关键词</button>
+              <button class="chip" id="monitor3" onClick={}>关键词</button>
+              <button class="chip" id="monitor4" onClick={}>关键词</button>
+              <button class="chip" id="monitor5" onClick={}>关键词</button>
+              <button class="chip" id="monitor6" onClick={}>关键词</button>
+              <button class="chip" id="monitor7" onClick={}>关键词</button>
+              <button class="chip" id="monitor8" onClick={}>关键词</button>
+              <button class="chip" id="monitor9" onClick={}>关键词</button>
+            </div>
+          
+          </div>
+          <div class="grid-item_little_title">相关关键词</div>
+          <div class="grid-item_container">
+            <div class="chip-group">
+                <button class="chip" id="monitor10" onClick={}>关键词</button>
+                <button class="chip" id="monitor11" onClick={}>关键词</button>
+                <button class="chip" id="monitor12" onClick={}>关键词</button>
+                <button class="chip" id="monitor13" onClick={}>关键词</button>
+                <button class="chip" id="monitor14" onClick={}>关键词</button>
+                <button class="chip" id="monitor15" onClick={}>关键词</button>
+            </div>
+          </div>
+          <div class="grid-item_title">
+            OUTPUT
+          </div>  
+          <div class="grid-item_container">
+            <div class="chip-group">
+                <button class="chip" id="monitor16" onClick={}>关键词</button>
+                <button class="chip" id="monitor17" onClick={}>关键词</button>
+                <button class="chip" id="monitor18" onClick={}>关键词</button>
+                <button class="chip" id="monitor19" onClick={}>关键词</button>
+                <button class="chip" id="monitor20" onClick={}>关键词</button>
+                <button class="chip" id="monitor21" onClick={}>关键词</button>
+                <button class="chip" id="monitor22" onClick={}>关键词</button>
+                <button class="chip" id="monitor23" onClick={}>关键词</button>
+                <button class="chip" id="monitor24" onClick={}>关键词</button>
+                <button class="chip" id="monitor25" onClick={}>关键词</button>
+                <button class="chip" id="monitor26" onClick={}>关键词</button>
+                <button class="chip" id="monitor27" onClick={}>关键词</button>
+            </div>
+          </div>
+          <div class="grid-item_little_title">相关关键词</div>
+          <div class="grid-item_container">
+            <div class="chip-group">
+                <button class="chip" id="monitor28" onClick={}>关键词</button>
+                <button class="chip" id="monitor29" onClick={}>关键词</button>
+                <button class="chip" id="monitor30" onClick={}>关键词</button>
+                <button class="chip" id="monitor31" onClick={}>关键词</button>
+                <button class="chip" id="monitor32" onClick={}>关键词</button>
+                <button class="chip" id="monitor33" onClick={}>关键词</button>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+      
+    <div style="align-items: center;" id="chatbox">
+         <img style="align-items: center;"   id="image-placeholder" src="">
+    </div>
+    <div className="button_wrap">
+        <button class="submit-button">submit</button>
+        <button>prompts</button>
+        <button>messaegNum</button>
+    </div>
+    <div id="input-container">
+        <textarea id="inputbox"></textarea>
+    </div>
+</body>
+
+<!-- Load React. -->
+<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="keyword.js"></script>
+<!-- Load our React component. -->
+
+<script src="app.js"></script>
+<style>
+  body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
+  .chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* 根据需要调整间距 */
+}
+
+.chip {
+  margin-left: 15px;
+  padding: 8px 12px;
+  background-color: #e0e0e0;
+  border-radius: 16px; /* 创建圆角 */
+  font-size: 14px;
+  cursor: pointer; /* 鼠标悬停时显示指针 */
+  border: none;
+  outline: none;
+  transition: background-color 0.3s; /* 平滑背景色过渡 */
+}
+
+.chip:hover {
+  background-color: #d5d5d5; /* 鼠标悬停时改变背景色 */
+}
+
+  .grid-container {
+    display: grid;      
+    grid-template-rows: 4fr 2fr  ; /* 例如，这里创建了三个等宽的列 */
+  }
+  .grid-item_big_title{
+    display: grid;
+    place-items: center;
+    background-color: #3d51fe;
+    font-size: 20px;
+    color: #fff;
+  }
+  .grid-item_title{
+    display: grid;
+    place-items: center;
+    background-color: #d0e3fe;
+    font-size: 20px;
+    color: #fff;
+  }
+  .grid-item_container{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    display: grid;
+    place-items: center;
+    font-size: 15px;
+  }
+  .grid-item_little_title{
+    display: grid;
+    place-items: center;
+    background-color: #ccc;
+    font-size: 15px;
+  }
+  .word-container {
+    float: left;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 17%;
+    height: 100%;
+}
+.word-chooser {
+    padding: 10px;
+    background-color: #f9f9f9;
+    height: 750px;
+    overflow-y: scroll;
+}
+.name{
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.chat-container {
+    float: right;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 80%;
+    height: 100%;
+}
+
+.chat-display {
+    padding: 10px;
+    background-color: #f9f9f9;
+    height: 700px;
+    overflow-y: scroll;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-input button {
+    padding: 5px 10px;
+    background-color: #428bca;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  button {
+    border: none;
+    background-color: #3f88c5;
+    color: white;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .warning_button {
+    background-color: #e07a5f;
+  }
+
+  .func_button {
+    background-color: #4c956c;
+  }
+
+  .desc_button {
+    background-color: #8d99ae;
+  }
+
+  #chatbox {
+    margin-top: 105px;
+    border: 1px solid gray;
+    height: calc(90vh - 250px);
+    overflow-y: scroll;
+    padding: 10px;
+    position: relative;
+  }
+
+  #chatbox .user_edit_btn {
+    position: absolute;
+    right: 0px;
+    top: 0;
+  }
+
+  .message {
+    margin-bottom: 10px;
+    font-size: 18px;
+    position: relative;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .user-message {
+    color: #00695c;
+    /* text-align: right; */
+  }
+
+  .assistant-message {
+    color: #ef6c00;
+  }
+
+  .warning-message {
+    color: red;
+  }
+
+  .chatgpt-message {
+    text-align: left;
+  }
+
+  .loading_wrap {
+    margin: 0;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: #4c956c;
+    font-size: 17px;
+  }
+
+  .button_wrap {
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+    margin-bottom: -7px;
+  }
+
+  .button_wrap button {
+    margin-right: 10px;
+    margin-bottom: 14px;
+  }
+
+  .button_wrap button:last-child {
+    margin-right: 0px;
+  }
+
+  #input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #inputbox {
+    font-size: 1rem;
+    padding: 10px;
+    width: 100%;
+  }
+</style>
+<div style="text-align: center;">
+  <a href="https://beian.miit.gov.cn" target="_blank">吉ICP备2024013746号-1</a>
+  <p></p>
+   <a href="https://beian.miit.gov.cn" target="_blank">京公网安备11010802044180号</a> 
+</div>
+</html>

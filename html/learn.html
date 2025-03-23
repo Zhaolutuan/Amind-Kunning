@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>使用页面</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg"/>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css"/>
+    <link rel="stylesheet" href="assets/css/animate.css"/>
+    <link rel="stylesheet" href="assets/css/tiny-slider.css"/>
+    <link rel="stylesheet" href="assets/css/glightbox.min.css"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML5 Template">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 导航栏样式 */
+        .header {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .login-btn {
+            padding: 0.5rem 1rem;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            max-width: 100%;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 0;
+            padding: 0;
+            flex: 1;
+        }
+
+        /* Prompt系统样式 */
+        .prompt-system {
+            background: white;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 0.1rem;
+            overflow-y: auto;
+            width: 420px;
+            border-right: 1px solid #eee;
+            overflow-y: scroll; /* 改为scroll，使滚动条始终显示 */
+            padding-right: 12px; /* 为滚动条预留空间 */
+        }
+
+        .section-title1 {
+            font-weight: 900;
+            font-size: xx-large;
+            display: grid;
+            place-items: center;
+            background-color: #5892ff;
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .section-title2 {
+            font-weight: 800;
+            display: grid;
+            place-items: center;
+            background-color: #d0e3fe;
+            font-size: 25px;
+            color: #3d51fe;
+        }
+
+        .section-title3 {
+            display: grid;
+            place-items: center;
+            background-color: #e4e3e3;
+            color: black;
+            font-size: 20px;
+            padding-left: 11px;
+            justify-content: flex-start;
+        }
+
+        .section-title4 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            color: rgb(70, 70, 70);
+            font-size: 30px;
+            padding: 11px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .keywords-container {
+            overflow: auto;
+            margin-top: 3px;
+            margin-bottom: 3px;
+            display: grid;
+            place-items: center;
+            font-size: 15px;
+            height: 20vh;
+        }
+
+        .keywords-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+        }
+
+        .keyword {
+            background: white;
+            padding: 4px 12px;
+            border: 1px solid black;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer; /* 鼠标悬停时显示指针 */
+            user-select: none;
+            width: 12vh;
+            color: gray;
+            margin-left: 2px;
+            transition: background-color 0.3s;
+        }
+
+        /* 选中状态的样式 */
+        .keyword.selected {
+            border: 2px solid #3d51fe;
+            color: #3d51fe;
+
+        }
+
+        .keyword:hover {
+            background-color: #d5d5d5; /* 鼠标悬停时改变背景色 */
+        }
+
+        /* 对话界面样式 */
+        .chat-interface {
+            background: white;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 2rem;
+            height: 110vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+        }
+
+        .message {
+            margin: 0.5rem 0;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .bot-message {
+            background: white;
+            margin-right: 2rem;
+            text-indent: 2em;
+        }
+
+        .user-message {
+            background: #e3f2fd;
+            margin-left: 2rem;
+        }
+
+        .chat-input {
+            width: calc(100% - 440px); /* 100% - (Prompt系统宽度 + 间距) */
+            display: flex;
+            gap: 10px;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #eee;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            margin-left: 420px; /* 添加左边距，与Prompt系统对齐 */
+        }
+
+        /* 固定定位样式 */
+        .chat-input.fixed {
+            position: fixed;
+            bottom: 20px;
+            right: 10px;
+            width: calc(100% - 440px);
+        }
+
+        /* 绝对定位样式 */
+        .chat-input.absolute {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            margin-left: 420px; /* 保持左边距 */
+            width: calc(100% - 40px);
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .send-btn {
+            padding: 0.5rem 4rem;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background: white;
+            color: white;
+            padding: 2rem 1rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* A-Mind头像样式 */
+        .amind-avatar {
+            width: 10px;
+            height: 10px;
+            border-radius: 20%;
+            margin-right: 5px;
+        }
+
+        /* A-Mind头像样式 */
+        .amind-title-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .upper-section {
+            flex: 0 0 35%; /* 禁止伸缩，固定35%高度 */
+            overflow-y: auto; /* 内容超出时显示滚动条 */
+            border-bottom: 1px solid #eee; /* 可视化的分割线 */
+        }
+
+        .lower-section {
+            flex: 0 0 65%; /* 禁止伸缩，固定65%高度 */
+            overflow-y: auto; /* 内容超出时显示滚动条 */
+        }
+        * 新增样式 *
+        .chart-container {
+            height: 35vh;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .page-btn {
+            padding: 5px 15px;
+            background: #5892ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .page-btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .page-indicator {
+            font-size: 14px;
+            color: #666;
+        }
+        .lower-section {
+            /* 保持现有flex设置 */
+            flex: 0 0 65%;
+
+            /* 添加图片容器定位 */
+            position: relative;
+            min-height: 400px; /* 设置最小高度保证显示 */
+        }
+
+        .analysis-image {
+            height: 100%;
+            width: 100%;
+            object-fit: contain; /* 完整显示图表类图片 */
+            display: block;
+            padding: 15px; /* 添加留白 */
+
+            /* 防止拖拽 */
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+    </style>
+</head>
+
+<body>
+<div id="chatgpt_demo_container"></div>
+<header class="header navbar-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="nav-inner">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="index.html" style="display: inline-block; width: 64px; height: 64px">
+                            <img src="assets/images/logo/A-Mind.svg"
+                                 alt="Logo"
+                                 style="width: 100%; height: 100%; object-fit: contain; image-rendering: crisp-edges;">
+                        </a>
+                        <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="dd-menu collapsed" href="index.html"
+                                       aria-controls="navbarSupportedContent" aria-expanded="false"
+                                       aria-label="Toggle navigation">主页</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="button add-list-button">
+                            <a href="404.html" class="btn">
+                                登录账号/注册</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- 主要内容区域 -->
+<main class="main-content">
+    <!-- Prompt系统 -->
+    <div class="prompt-system">
+        <div class="upper-section">
+            <div class="chart-container">
+                <div id="radarChart" style="height: 300px;"></div>
+                <div class="pagination">
+                    <button class="page-btn prev">上一页</button>
+                    <span class="page-indicator">1/3</span>
+                    <button class="page-btn next">下一页</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 下半部分 (65%) -->
+        <div class="lower-section">
+            <img src="assets/people.jpg" class="analysis-image">
+        </div>
+    </div>
+    <!-- 对话界面 -->
+    <div class="chat-interface">
+        <div class="chat-messages" id="chatbox">
+            <!-- 初始消息 -->
+            <div class="section-title4">
+                <div class="title-left">
+                    <img src="assets/3.png" alt="A-Mind Avatar" class="amind-title-avatar">
+                    <span>Kunning</span>
+                </div>
+            </div>
+            <div class="message bot-message">
+                <p>欢迎使用Kunning AI营销助手，请问有什么可以帮您？</p>
+            </div>
+        </div>
+
+        <!-- 修改输入区域 -->
+        <div class="chat-input">
+            <input type="text" id="inputbox" placeholder="给Kunning发消息">
+            <button class="send-btn submit-button">发送</button>
+        </div>
+    </div>
+</main>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="footer-content">
+        <div style="text-align: center; height:10vh">
+            <br>
+            <br>
+            <a href="https://beian.miit.gov.cn" target="_blank">吉ICP备2024013746号-1</a>
+            <p></p>
+            <a href="https://beian.miit.gov.cn" target="_blank">京公网安备11010802044180号</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 发送消息功能
+    const chatInput = document.querySelector('.chat-input input');
+    const sendButton = document.querySelector('.send-btn');
+    const chatMessages = document.querySelector('.chat-messages');
+
+    function sendMessage() {
+        const message = chatInput.value.trim();
+        if (message) {
+            const messageElement = document.createElement('div');
+            messageElement.className = 'message user-message';
+            messageElement.innerHTML = `
+                    <p>${message}</p>
+                `;
+            chatMessages.appendChild(messageElement);
+            chatInput.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    }
+
+    sendButton.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        const chatInterface = document.querySelector('.chat-interface');
+        const chatInput = document.querySelector('.chat-input');
+        const threshold = chatInterface.offsetTop + chatInterface.offsetHeight - window.innerHeight;
+
+        function updateInputPosition() {
+            const scrollY = window.scrollY;
+            if (scrollY > threshold) {
+                chatInput.classList.remove('fixed');
+                chatInput.classList.add('absolute');
+            } else {
+                chatInput.classList.remove('absolute');
+                chatInput.classList.add('fixed');
+            }
+        }
+
+        // 监听滚动事件
+        window.addEventListener('scroll', updateInputPosition);
+        // 初始化位置
+        updateInputPosition();
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // 获取所有关键词元素
+        const keywords = document.querySelectorAll('.keyword');
+
+        // 为每个关键词添加点击事件
+        keywords.forEach(keyword => {
+            keyword.addEventListener('click', function () {
+                // 切换selected类
+                this.classList.toggle('selected');
+            });
+        });
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+
+<script>
+    // 雷达图数据配置
+    const radarData = [
+        { // 第一页数据
+            indicator: [
+                { name: '市场分析', max: 100 },
+                { name: '用户研究', max: 100 },
+                { name: '数据洞察', max: 100 },
+                { name: '策略制定', max: 100 },
+                { name: '执行效率', max: 100 },
+                { name: '效果评估', max: 100 }
+            ],
+            value: [85, 70, 90, 65, 75, 80]
+        },
+        { // 第二页数据
+            indicator: [
+                { name: '创新能力', max: 100 },
+                { name: '执行能力', max: 100 },
+                { name: '分析能力', max: 100 },
+                { name: '沟通能力', max: 100 },
+                { name: '学习能力', max: 100 },
+                { name: '应变能力', max: 100 }
+            ],
+            value: [75, 85, 80, 90, 70, 65]
+        },
+        { // 第三页数据
+            indicator: [
+                { name: '数字营销', max: 100 },
+                { name: '内容创作', max: 100 },
+                { name: 'SEO优化', max: 100 },
+                { name: '数据分析', max: 100 },
+                { name: '广告投放', max: 100 },
+                { name: '社交媒体', max: 100 }
+            ],
+            value: [90, 80, 85, 75, 70, 95]
+        }
+    ];
+
+    let currentPage = 0;
+    const chartDom = document.getElementById('radarChart');
+    const myChart = echarts.init(chartDom);
+
+    function updateChart(page) {
+        const option = {
+            tooltip: { trigger: 'item' },
+            radar: {
+                shape: 'polygon',
+                indicator: radarData[page].indicator,
+                axisLine: { lineStyle: { color: 'rgba(88, 146, 255, 0.5)' } },
+                splitLine: { lineStyle: { color: 'rgba(88, 146, 255, 0.2)' } }
+            },
+            series: [{
+                type: 'radar',
+                data: [{ value: radarData[page].value }],
+                areaStyle: { color: 'rgba(88, 146, 255, 0.4)' },
+                lineStyle: { color: '#5892ff' },
+                itemStyle: { color: '#5892ff' }
+            }]
+        };
+        myChart.setOption(option);
+    }
+
+    // 分页控制
+    document.querySelector('.prev').addEventListener('click', () => {
+        if (currentPage > 0) {
+            currentPage--;
+            updateChart(currentPage);
+            updatePagination();
+        }
+    });
+
+    document.querySelector('.next').addEventListener('click', () => {
+        if (currentPage < radarData.length - 1) {
+            currentPage++;
+            updateChart(currentPage);
+            updatePagination();
+        }
+    });
+
+    function updatePagination() {
+        document.querySelector('.page-indicator').textContent =
+            `${currentPage + 1}/${radarData.length}`;
+        document.querySelector('.prev').disabled = currentPage === 0;
+        document.querySelector('.next').disabled = currentPage === radarData.length - 1;
+    }
+
+    // 初始化
+    updateChart(0);
+    updatePagination();
+</script>
+
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="chat.js"></script>
+</body>
+</html>

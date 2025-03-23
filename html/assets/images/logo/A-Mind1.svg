@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 305.53 66.51">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_未命名的渐变_43);
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        font-family: EurostileCandyLTPro-Bold, 'Eurostile Candy LT Pro';
+        font-size: 48px;
+        font-weight: 700;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        font-family: FZSTK--GBK1-0, FZShuTi;
+        font-size: 14px;
+      }
+
+      .cls-5 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-6 {
+        fill: none;
+        stroke: url(#_未命名的渐变_20);
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        fill: url(#_未命名的渐变_40);
+      }
+    </style>
+    <linearGradient id="_未命名的渐变_43" data-name="未命名的渐变 43" x1="8.29" y1="33.29" x2="24.68" y2="49.68" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#50a8fd"/>
+      <stop offset=".38" stop-color="#4fa6fb"/>
+      <stop offset=".53" stop-color="#4da0f3"/>
+      <stop offset=".64" stop-color="#4997e7"/>
+      <stop offset=".74" stop-color="#4489d6"/>
+      <stop offset=".82" stop-color="#3d78bf"/>
+      <stop offset=".89" stop-color="#3462a3"/>
+      <stop offset=".96" stop-color="#2b4982"/>
+      <stop offset="1" stop-color="#233568"/>
+    </linearGradient>
+    <linearGradient id="_未命名的渐变_40" data-name="未命名的渐变 40" x1="42.62" y1="12.44" x2="42.62" y2="51.29" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#56a7fd"/>
+      <stop offset=".41" stop-color="#55a5fb"/>
+      <stop offset=".56" stop-color="#53a0f4"/>
+      <stop offset=".67" stop-color="#4f97e8"/>
+      <stop offset=".75" stop-color="#498ad7"/>
+      <stop offset=".83" stop-color="#427ac1"/>
+      <stop offset=".89" stop-color="#3865a6"/>
+      <stop offset=".95" stop-color="#2e4d86"/>
+      <stop offset="1" stop-color="#233465"/>
+    </linearGradient>
+    <linearGradient id="_未命名的渐变_20" data-name="未命名的渐变 20" x1="9.74" y1="9.74" x2="56.77" y2="56.77" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4fa8fd"/>
+      <stop offset=".52" stop-color="#a5a3fd"/>
+      <stop offset="1" stop-color="#4ba8fd"/>
+    </linearGradient>
+  </defs>
+  <text class="cls-3" transform="translate(84.92 41.12)"><tspan class="cls-5" x="0" y="0">A</tspan><tspan x="46.99" y="0">-Mind</tspan></text>
+  <text class="cls-4" transform="translate(91.02 60.83)"><tspan x="0" y="0">Marketing of Artificial Intelligence</tspan></text>
+  <path class="cls-1" d="m3.23,43.63l13.38-18.67s1.31-1.11,2.22,0,12.8,16.83,12.8,16.83l-3.73,4.64s-1.31,1.81-2.82,0-6.35-8.36-6.35-8.36c0,0-.6-2.12-2.02-.2s-10.21,12.52-10.21,12.52l-3.43-7.2"/>
+  <path class="cls-2" d="m31.63,41.79l6.25,8.59s1.91,2.04,3.02,0,20.59-31.67,20.59-31.67l-4.26-6.27s-14.32,22.81-15.32,24.99-2.22,0-2.22,0c0,0-7.76-10.35-8.57-11.56s-2.12,0-2.12,0l-5.26,5.53"/>
+  <circle class="cls-6" cx="33.26" cy="33.26" r="31.76"/>
+</svg>
